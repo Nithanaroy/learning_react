@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1388534400000,
+        "author": "Pete Hunt",
+        "text": "Hey there!"
+    },
+    {
+        "id": 1420070400000,
+        "author": "Paul O’Shannessy",
+        "text": "React is *great*!"
+    },
+    {
+        "id": 1456644267842,
+        "author": "Nitin",
+        "text": "Whats up"
+    },
+    {
+        "id": 1456644275246,
+        "author": "Nitin",
+        "text": "Polling is fun"
+    },
+    {
+        "id": 1456725009217,
+        "author": "Nitin",
+        "text": "My own comment form"
+    },
+    {
+        "id": 1456725371707,
+        "author": "Nitin",
+        "text": "Reactive Comment"
+    }
+]
