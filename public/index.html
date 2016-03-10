@@ -24,7 +24,7 @@
       getInitialState: function() {
         return {data: []};
       },
-      componentDidMount: function() {
+      loadCommentsFromServer: function() {
         $.ajax({
           url: this.props.url,
           dataType: 'json',
@@ -37,6 +37,10 @@
           }.bind(this)
         });
       },
+      componentDidMount: function() {
+        this.loadCommentsFromServer();
+        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+      },
       render: function() {
         return (
           <div className="commentBox">
@@ -48,7 +52,7 @@
       }
       });
       ReactDOM.render(
-        <CommentBox url="/api/comments" />,
+        <CommentBox url="/api/comments" pollInterval={2000} />,
         document.getElementById('content')
       );
 
