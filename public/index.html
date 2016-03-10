@@ -37,6 +37,9 @@
           }.bind(this)
         });
       },
+      handleCommentSubmit: function(comment) {
+        // TODO: submit to the server and refresh the list
+      },
       componentDidMount: function() {
         this.loadCommentsFromServer();
         setInterval(this.loadCommentsFromServer, this.props.pollInterval);
@@ -46,7 +49,7 @@
           <div className="commentBox">
             <h1>Comments</h1>
             <CommentList data={this.state.data} />
-            <CommentForm />
+            <CommentForm onCommentSubmit={this.handleCommentSubmit} />
           </div>
         );
       }
@@ -90,7 +93,7 @@
           if (!text || !author) {
             return;
           }
-          // TODO: send request to the server
+          this.props.onCommentSubmit({author: author, text: text});
           this.setState({author: '', text: ''});
         },
         render: function() {
